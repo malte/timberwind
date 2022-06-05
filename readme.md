@@ -1,7 +1,9 @@
 # Timberwind
 
 Tags: wordpress, timber, tailwind, alpine, no tooling
+
 License: MIT
+
 License URI: https://opensource.org/licenses/mit-license.php
 
 ## Description
@@ -28,3 +30,8 @@ node dev/build/watch script:
 `npx tailwindcss -i ./src/input.css -o ./theme/style.css --watch`
 
 when ready zip theme folder and use on your wp installation
+
+## Necessary WP Plugins
+* Timber
+* Polylang
+* recommended : Theme and plugin translation for Polylang (TTfP) 
