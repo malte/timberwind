@@ -1,0 +1,50 @@
+<div class="">
+    <nav
+        x-data="{ isOpen: false }" 
+        role="navigation" 
+        class="flex items-center justify-between flex-wrap p-6 w-full z-10 top-0" 
+        @keydown.escape="isOpen = false" 
+        :class="{ ' bg-primary-dark' : isOpen , 'bg-primary' : !isOpen}"
+        >
+        <a class="" href="{{ current_language == "de" ? site.url : site.url ~ '/' ~ current_language}}" rel="home">
+            <img src="{{ theme.link }}/assets/images/ROKA_full.png" alt="{{site.name}}" class="w-40">
+        </a>
+        <h2 class="">{{site.description}}</h2>
+        <button
+            type="button"
+            aria-label="toggle menu"
+            @click="isOpen = !isOpen"
+            class="block lg:hidden px-2 text-black-500 hover:text-red-900 focus:outline-none focus:text-red-900"
+            :class="{ 'transition transform-180': isOpen }"
+        >
+            <svg
+            class="h-6 w-6 fill-current"    
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            >
+            <path
+                x-show="isOpen"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+            />
+            <path
+                x-show="!isOpen"
+                fill-rule="evenodd"
+                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+            />
+            </svg>
+        </button>
+        <div
+            class="w-full lg:flex lg:items-center lg:w-auto lg:gap-4"
+            :class="{ 'block': isOpen, 'hidden': !isOpen }"
+            @click.away="isOpen = false"
+            x-transition
+        >
+            {% include "menu.twig" with {'items': main_menu.get_items, 'language': current_language} %}
+            <ul class="flex lg:flex-row gap-4">
+                {% do fn('pll_the_languages','slug') %}
+            </ul>
+        </div>
+    </nav><!-- #nav -->
+</div>

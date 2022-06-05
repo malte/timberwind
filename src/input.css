@@ -1,0 +1,44 @@
+/*!
+Theme Name: Timberwind
+Author: Malte Euler
+Description: A barebones theme utilising timber and tailwind 3
+Version: 1.0.0
+Tags:
+
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+    }
+    @font-face {
+        font-family: "cabin";
+        src: url("./fonts/Cabin-Regular.ttf") format("truetype");
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "cabin";
+        src: url("./fonts/Cabin-Italic.ttf") format("truetype");
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "cabin";
+        src: url("./fonts/Cabin-Bold.ttf") format("truetype");
+        font-weight: 700;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-bold;
+    }
+}
+@layer components {
+
+}
+@layer utilities {
+
+}

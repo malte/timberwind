@@ -1,0 +1,17 @@
+
+	<ul class="flex lg:flex-row lg:gap-4">
+		{% for item in items %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a
+				class=""
+				target="{{ item.target }}"
+				href="{{ item.link }}"
+			>
+				{{ item.title }}
+			</a>
+			{% if item.children %}
+			{% include "menu.twig" with {'items': item.children} %}
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
