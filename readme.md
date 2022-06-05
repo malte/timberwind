@@ -1,8 +1,6 @@
-== 
-1 contributors
-@malto
+== Timberwind ==
 
-Tags: template engine, templates, twig
+Tags: wordpress, timber, tailwind, alpine, no tooling
 License: MIT
 License URI: https://opensource.org/licenses/mit-license.php
 
@@ -23,11 +21,11 @@ Timberwind is a Wordpress theme scaffolding, without any tooling, using
 * responsive burger menu from wp-menu
 
 
-How to use:
+== How to use ==
 
 clone and run
 
 node dev/build/watch script:
-npx tailwindcss -i ./src/input.css -o ./theme/style.css --watch
+`npx tailwindcss -i ./src/input.css -o ./theme/style.css --watch`
 
 when ready zip theme folder and use on your wp installation
