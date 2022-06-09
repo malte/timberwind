@@ -12,22 +12,25 @@ Tags:
 @tailwind utilities;
 
 @layer base {
+    .rash {
+        @apply bg-red-600;
+    }
     :root {
     }
     @font-face {
-        font-family: "cabin";
-        src: url("./fonts/Cabin-Regular.ttf") format("truetype");
-        font-weight: 400;
+        font-family: "Inter";
+        src: url("./fonts/Inter-Light.ttf") format("woff2");
+        font-weight: normal;
     }
     @font-face {
-        font-family: "cabin";
-        src: url("./fonts/Cabin-Italic.ttf") format("truetype");
+        font-family: "Inter";
+        src: url("./fonts/Inter-LightItalic.ttf") format("woff2");
         font-style: italic;
     }
     @font-face {
-        font-family: "cabin";
-        src: url("./fonts/Cabin-Bold.ttf") format("truetype");
-        font-weight: 700;
+        font-family: "Inter";
+        src: url("./fonts/Inter-ExtraBold.ttf") format("woff2");
+        font-weight: bold;
     }
     h1,
     h2,
