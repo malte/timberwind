@@ -42,9 +42,6 @@
             x-transition
         >
             {% include "menu.twig" with {'items': main_menu.get_items, 'language': current_language} %}
-            <ul class="flex lg:flex-row gap-4">
-                {% do fn('pll_the_languages','slug') %}
-            </ul>
         </div>
     </nav><!-- #nav -->
 </div>

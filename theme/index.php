@@ -13,7 +13,6 @@
  * @subpackage  Timber
  * @since   Timber 0.1
  */
-//$language = pll_current_language();
 $context          = Timber::context();
 
 $context['post'] = Timber::get_post();

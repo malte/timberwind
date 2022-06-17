@@ -78,9 +78,8 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$language = pll_current_language();
 		$context['current_language']   = $language;
-		$context['main_menu']  = new Timber\Menu('main-menu-' . $language);
+		$context['main_menu']  = new Timber\Menu('main-menu-');
 		$context['site']  = $this;
 		return $context;
 	}
@@ -147,8 +146,6 @@ class StarterSite extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 		$twig->addFilter( new Twig\TwigFilter( 'myfoo', array( $this, 'myfoo' ) ) );
-		$twig->addFunction( new Timber\Twig_Function( 'pll_e', 'pll_e' ) );
-		$twig->addFunction( new Timber\Twig_Function( 'pll__', 'pll__' ) );
 		// $twig->addFilter( new Twig_SimpleFilter( 'usort', function($item, array $key) {
 		// 	usort($this, function ($item1, $item2) {
        	// 	if ($item1.$key == $item2.$key) return 0;
@@ -185,5 +182,3 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
-
-add_filter( 'pll_the_languages_args', function( $args ) { $args['display_names_as'] = 'slug'; return $args; } );

@@ -29,5 +29,3 @@ when ready, zip theme folder and use on your wp installation
 
 ## Necessary WP Plugins
 * Timber
-* Polylang
-* recommended : Theme and plugin translation for Polylang (TTfP) 
