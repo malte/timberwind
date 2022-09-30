@@ -6,7 +6,7 @@
         @keydown.escape="isOpen = false" 
         :class="{ ' bg-primary-dark' : isOpen , 'bg-primary' : !isOpen}"
         >
-        <a class="" href="{{ current_language == "de" ? site.url : site.url ~ '/' ~ current_language}}" rel="home">
+        <a class="" href="{{ site.url }}" rel="home">
             <img src="{{ theme.link }}/assets/images/ROKA_full.png" alt="{{site.name}}" class="w-40">
         </a>
         <h2 class="">{{site.description}}</h2>
